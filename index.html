@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Asia Fuel Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14181f;
+    --panel: #1c222c;
+    --panel-raised: #232a35;
+    --hairline: #2c3541;
+    --text: #eef1f5;
+    --text-dim: #8b96a5;
+    --petrol: #ffb545;
+    --diesel: #3fd0c9;
+    --warn: #ff6b6b;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0; padding:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body{
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(255,181,69,0.05), transparent 45%),
+      radial-gradient(circle at 85% 10%, rgba(63,208,201,0.05), transparent 40%);
+  }
+
+  .wrap{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  header{
+    display:flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 28px;
+  }
+
+  .board-label{
+    font-family:'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+  }
+
+  h1{
+    margin: 4px 0 2px;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  h1 span{ color: var(--petrol); }
+
+  .subhead{
+    color: var(--text-dim);
+    font-size: 15px;
+    max-width: 60ch;
+    line-height: 1.5;
+  }
+
+  .updated-row{
+    margin-top: 14px;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    font-family:'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--diesel);
+    box-shadow: 0 0 8px var(--diesel);
+    flex-shrink:0;
+  }
+
+  .dot.warn{ background: var(--warn); box-shadow: 0 0 8px var(--warn); }
+
+  .banner{
+    display:none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(255,107,107,0.1);
+    border: 1px solid rgba(255,107,107,0.3);
+    color: #ffb3b3;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .banner.show{ display:block; }
+
+  .toggle-row{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .toggle-label{ font-size: 13px; color: var(--text-dim); }
+
+  .toggle{
+    display:inline-flex;
+    background: var(--panel);
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 4px;
+    gap: 2px;
+  }
+
+  .toggle button{
+    appearance:none;
+    border:none;
+    background: transparent;
+    color: var(--text-dim);
+    font-family:'Space Mono', monospace;
+    font-size: 13px;
+    padding: 9px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .toggle button:hover{ color: var(--text); }
+
+  .toggle button.active{
+    background: var(--petrol);
+    color: #1a1305;
+    font-weight: 700;
+  }
+
+  .legend{
+    display:flex;
+    gap: 22px;
+    margin-bottom: 18px;
+    font-family:'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .legend-item{ display:flex; align-items:center; gap:7px; }
+  .swatch{ width:10px; height:10px; border-radius:2px; }
+  .swatch.petrol{ background: var(--petrol); }
+  .swatch.diesel{ background: var(--diesel); }
+
+  .board{ display:flex; flex-direction: column; gap: 14px; }
+
+  .row{
+    background: var(--panel);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .country{ display:flex; flex-direction: column; gap: 4px; }
+
+  .country-name{
+    font-size: 18px;
+    font-weight: 700;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+
+  .flag{ font-size: 22px; line-height:1; }
+
+  .country-meta{
+    font-size: 12px;
+    color: var(--text-dim);
+    font-family:'Space Mono', monospace;
+  }
+
+  .price-block{
+    background: var(--panel-raised);
+    border-radius: 10px;
+    padding: 12px 14px;
+    position: relative;
+  }
+
+  .price-block.petrol{ box-shadow: inset 3px 0 0 var(--petrol); }
+  .price-block.diesel{ box-shadow: inset 3px 0 0 var(--diesel); }
+  .price-block.is-stale{ box-shadow: inset 3px 0 0 var(--warn); }
+
+  .price-tag{
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    display:flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .stale-flag{ color: var(--warn); }
+
+  .price-value{
+    font-family:'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 22px;
+    display:flex;
+    align-items:baseline;
+    gap: 5px;
+  }
+
+  .price-value.petrol{ color: var(--petrol); }
+  .price-value.diesel{ color: var(--diesel); }
+
+  .price-unit{ font-size: 12px; color: var(--text-dim); font-weight: 400; }
+
+  .notes{
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .notes h2{ font-size: 14px; color: var(--text); margin: 0 0 10px; font-weight: 600; }
+  .notes ul{ margin: 0; padding-left: 20px; }
+  .notes li{ margin-bottom: 6px; }
+
+  .howto{
+    margin-top: 26px;
+    background: var(--panel);
+    border: 1px dashed var(--hairline);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .howto h2{ color: var(--petrol); }
+
+  code{
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family:'Space Mono', monospace;
+    font-size: 12px;
+  }
+
+  .loading{ color: var(--text-dim); font-family:'Space Mono', monospace; font-size: 13px; padding: 20px 0; }
+
+  @media (max-width: 620px){
+    .row{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="board-label">AUTO-UPDATING FUEL BOARD</div>
+    <h1>Petrol &amp; Diesel <span>Price Board</span></h1>
+    <div class="subhead">Pump prices for Pakistan, India, Bangladesh and Afghanistan, refreshed automatically a few times a day.</div>
+    <div class="updated-row">
+      <span class="dot" id="statusDot"></span>
+      <span id="updatedText">Loading latest prices…</span>
+    </div>
+    <div class="banner" id="staleBanner">
+      One or more sources couldn't be reached on the last update, so some prices below are showing the last known value rather than a fresh one. Everything else keeps working as normal.
+    </div>
+  </header>
+
+  <div class="toggle-row">
+    <div class="toggle-label">Show prices in</div>
+    <div class="toggle" id="currencyToggle">
+      <button data-mode="local" class="active">Local Currency</button>
+      <button data-mode="pkr">PKR</button>
+      <button data-mode="usd">USD</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="swatch petrol"></span> Petrol</div>
+    <div class="legend-item"><span class="swatch diesel"></span> Diesel</div>
+  </div>
+
+  <div class="board" id="board">
+    <div class="loading">Loading latest prices…</div>
+  </div>
+
+  <div class="notes">
+    <h2>About these numbers</h2>
+    <ul>
+      <li>Prices are pulled automatically from public price-tracking sources a few times a day. See each row's small print for where its numbers came from.</li>
+      <li>Currency conversions use a live USD exchange rate, refreshed on the same schedule as the prices.</li>
+      <li>If you see a price marked "last known value," it means the automated check couldn't reach that source this time — the number shown is the most recent one that did work, not a live figure.</li>
+    </ul>
+  </div>
+
+  <div class="howto">
+    <h2>How the automatic updates work</h2>
+    <ul>
+      <li>A small script (<code>scrape.py</code>) runs on a schedule (GitHub Actions, free), checks each country's price source, and writes the results into <code>data.json</code>.</li>
+      <li>This page just reads <code>data.json</code> — there's nothing to edit here day to day.</li>
+      <li>If a source website changes its layout and the script stops finding a number, the page will show a warning banner (like the one above) instead of a wrong price, and the last good value stays on screen until it's fixed.</li>
+      <li>You can still hand-edit <code>data.json</code> at any time if you want to correct or add something manually — the site will pick it up on next load.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+const symbols = { PKR: "Rs", INR: "₹", BDT: "৳", AFN: "؋", USD: "$" };
+let currentData = null;
+let currentMode = "local";
+
+function formatPrice(value, currency){
+  if(value === null || value === undefined || isNaN(value)) return "—";
+  return symbols[currency] + " " + value.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function convert(fuelEntry, fromCurrency, toMode, rates){
+  const localAmount = fuelEntry.local;
+  if(localAmount === null || localAmount === undefined) return { value: null, currency: fromCurrency };
+
+  if(toMode === "local") return { value: localAmount, currency: fromCurrency };
+
+  // Prefer the USD figure the source gave us directly; fall back to
+  // computing it from the exchange rate if the source didn't provide one.
+  let usdValue = fuelEntry.usd;
+  if(usdValue === null || usdValue === undefined){
+    const rate = rates[fromCurrency];
+    if(!rate) return { value: null, currency: "USD" };
+    usdValue = localAmount / rate;
+  }
+
+  if(toMode === "usd") return { value: usdValue, currency: "USD" };
+  if(toMode === "pkr"){
+    const pkrRate = rates.PKR;
+    if(!pkrRate) return { value: null, currency: "PKR" };
+    return { value: usdValue * pkrRate, currency: "PKR" };
+  }
+}
+
+function render(){
+  if(!currentData) return;
+  const board = document.getElementById("board");
+  board.innerHTML = "";
+
+  const order = ["Pakistan", "India", "Bangladesh", "Afghanistan"];
+  order.forEach(name => {
+    const c = currentData.countries[name];
+    if(!c) return;
+
+    const petrolConv = convert(c.petrol, c.currency, currentMode, currentData.rates);
+    const dieselConv = convert(c.diesel, c.currency, currentMode, currentData.rates);
+
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `
+      <div class="country">
+        <div class="country-name"><span class="flag">${c.flag}</span>${c.name}</div>
+        <div class="country-meta">${c.petrol.date || "—"}</div>
+      </div>
+      <div class="price-block petrol ${c.petrol.stale ? "is-stale" : ""}">
+        <div class="price-tag"><span>PETROL / LITRE</span>${c.petrol.stale ? '<span class="stale-flag">last known</span>' : ""}</div>
+        <div class="price-value petrol">${formatPrice(petrolConv.value, petrolConv.currency)}</div>
+      </div>
+      <div class="price-block diesel ${c.diesel.stale ? "is-stale" : ""}">
+        <div class="price-tag"><span>DIESEL / LITRE</span>${c.diesel.stale ? '<span class="stale-flag">last known</span>' : ""}</div>
+        <div class="price-value diesel">${formatPrice(dieselConv.value, dieselConv.currency)}</div>
+      </div>
+    `;
+    board.appendChild(row);
+  });
+}
+
+document.getElementById("currencyToggle").addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if(!btn) return;
+  document.querySelectorAll("#currencyToggle button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentMode = btn.dataset.mode;
+  render();
+});
+
+async function load(){
+  try{
+    // cache-bust so browsers don't hold on to an old copy of data.json
+    const resp = await fetch("data.json?t=" + Date.now());
+    if(!resp.ok) throw new Error("data.json responded with " + resp.status);
+    currentData = await resp.json();
+
+    document.getElementById("updatedText").textContent = "Last checked: " + currentData.updated_utc;
+
+    const anyStale = Object.values(currentData.countries).some(c => c.petrol.stale || c.diesel.stale);
+    document.getElementById("statusDot").classList.toggle("warn", anyStale || currentData.had_failures);
+    document.getElementById("staleBanner").classList.toggle("show", anyStale || currentData.had_failures);
+
+    render();
+  } catch(err){
+    document.getElementById("board").innerHTML =
+      '<div class="loading">Couldn\'t load data.json (' + err.message + '). Make sure this file is sitting next to index.html.</div>';
+    document.getElementById("updatedText").textContent = "Couldn't load latest prices";
+    document.getElementById("statusDot").classList.add("warn");
+  }
+}
+
+load();
+</script>
+
+</body>
+</html>

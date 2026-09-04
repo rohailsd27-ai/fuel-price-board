@@ -1,0 +1,35 @@
+{
+  "updated_utc": "2026-09-04 07:00 UTC (seed data, not yet auto-scraped)",
+  "countries": {
+    "Pakistan": {
+      "name": "Pakistan",
+      "flag": "\ud83c\uddf5\ud83c\uddf0",
+      "currency": "PKR",
+      "petrol": { "local": 343.87, "usd": null, "date": "2026-09-02", "source": "OGRA notification", "stale": false },
+      "diesel": { "local": 370.92, "usd": null, "date": "2026-09-02", "source": "OGRA notification", "stale": false }
+    },
+    "India": {
+      "name": "India",
+      "flag": "\ud83c\uddee\ud83c\uddf3",
+      "currency": "INR",
+      "petrol": { "local": 102.12, "usd": 1.06, "date": "2026-07-21", "source": "Delhi retail price, Indian Oil", "stale": false },
+      "diesel": { "local": 95.20, "usd": 0.99, "date": "2026-07-21", "source": "Delhi retail price, Indian Oil", "stale": false }
+    },
+    "Bangladesh": {
+      "name": "Bangladesh",
+      "flag": "\ud83c\udde7\ud83c\udde9",
+      "currency": "BDT",
+      "petrol": { "local": 140.00, "usd": 1.13, "date": "2026-06-01", "source": "Energy & Mineral Resources Division", "stale": false },
+      "diesel": { "local": 115.00, "usd": 0.93, "date": "2026-06-01", "source": "Energy & Mineral Resources Division", "stale": false }
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "flag": "\ud83c\udde6\ud83c\uddeb",
+      "currency": "AFN",
+      "petrol": { "local": 80.00, "usd": 1.22, "date": "2026-08-10", "source": "Kabul retail price", "stale": false },
+      "diesel": { "local": 75.00, "usd": 1.14, "date": "2026-08-10", "source": "Kabul retail price", "stale": false }
+    }
+  },
+  "rates": { "PKR": 278.50, "INR": 96.00, "BDT": 123.01, "AFN": 65.85 },
+  "had_failures": false
+}
