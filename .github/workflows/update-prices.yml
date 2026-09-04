@@ -1,0 +1,43 @@
+name: Update fuel prices
+
+# When this runs:
+#   - automatically, 3 times a day (06:00, 14:00, 22:00 UTC)
+#   - any time you trigger it by hand from the Actions tab ("Run workflow")
+#   - automatically whenever scrape.py is edited and pushed
+on:
+  schedule:
+    - cron: "0 6,14,22 * * *"
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "scrape.py"
+
+# Needed so the workflow is allowed to save data.json back to the repo.
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the scraper
+        run: python scrape.py
+
+      - name: Save updated prices, if anything changed
+        run: |
+          git config user.name "fuel-price-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet && echo "No price changes." || git commit -m "Update fuel prices"
+          git push
