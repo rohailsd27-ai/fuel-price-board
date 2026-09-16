@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-09-16 06:16 UTC",
+  "updated_utc": "2026-09-16 14:13 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
@@ -25,18 +25,18 @@
       "flag": "\ud83c\uddee\ud83c\uddf3",
       "currency": "INR",
       "petrol": {
-        "local": 108.85,
-        "usd": 1.148,
-        "date": "2026-09-07",
+        "local": 108.7,
+        "usd": 1.132,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
-        "local": 98.32,
-        "usd": 1.037,
-        "date": "2026-09-07",
+        "local": 98.14,
+        "usd": 1.022,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": true
+        "stale": false
       }
     },
     "Bangladesh": {
@@ -45,17 +45,17 @@
       "currency": "BDT",
       "petrol": {
         "local": 145.0,
-        "usd": 1.181,
-        "date": "2026-09-07",
+        "usd": 1.179,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
         "local": 115.0,
-        "usd": 0.937,
-        "date": "2026-09-07",
+        "usd": 0.935,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": true
+        "stale": false
       }
     },
     "Afghanistan": {
@@ -64,17 +64,17 @@
       "currency": "AFN",
       "petrol": {
         "local": 87.0,
-        "usd": 1.33,
-        "date": "2026-09-07",
+        "usd": 1.341,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
         "local": 79.0,
-        "usd": 1.208,
-        "date": "2026-09-07",
+        "usd": 1.218,
+        "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": true
+        "stale": false
       }
     }
   },
