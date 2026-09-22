@@ -1,19 +1,19 @@
 {
-  "updated_utc": "2026-09-22 14:13 UTC",
+  "updated_utc": "2026-09-22 22:11 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
       "flag": "\ud83c\uddf5\ud83c\uddf0",
       "currency": "PKR",
       "petrol": {
-        "local": 393.75,
+        "local": 392.05,
         "usd": null,
         "date": "2026-09-22",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       },
       "diesel": {
-        "local": 422.08,
+        "local": 418.96,
         "usd": null,
         "date": "2026-09-22",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
@@ -29,14 +29,14 @@
         "usd": 1.132,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 98.14,
         "usd": 1.022,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": false
+        "stale": true
       }
     },
     "Bangladesh": {
@@ -48,14 +48,14 @@
         "usd": 1.179,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 115.0,
         "usd": 0.935,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": false
+        "stale": true
       }
     },
     "Afghanistan": {
@@ -67,14 +67,14 @@
         "usd": 1.341,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 79.0,
         "usd": 1.218,
         "date": "2026-09-14",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       }
     }
   },
