@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-14 00:55 UTC",
+  "updated_utc": "2026-10-14 11:22 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
@@ -26,17 +26,17 @@
       "currency": "INR",
       "petrol": {
         "local": 108.65,
-        "usd": 1.127,
-        "date": "2026-10-05",
+        "usd": 1.144,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
         "local": 98.1,
-        "usd": 1.018,
-        "date": "2026-10-05",
+        "usd": 1.032,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": true
+        "stale": false
       }
     },
     "Bangladesh": {
@@ -45,17 +45,17 @@
       "currency": "BDT",
       "petrol": {
         "local": 165.0,
-        "usd": 1.345,
-        "date": "2026-10-05",
+        "usd": 1.341,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
         "local": 135.0,
-        "usd": 1.101,
-        "date": "2026-10-05",
+        "usd": 1.097,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": true
+        "stale": false
       }
     },
     "Afghanistan": {
@@ -63,18 +63,18 @@
       "flag": "\ud83c\udde6\ud83c\uddeb",
       "currency": "AFN",
       "petrol": {
-        "local": 87.0,
-        "usd": 1.361,
-        "date": "2026-10-05",
+        "local": 86.0,
+        "usd": 1.324,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": true
+        "stale": false
       },
       "diesel": {
-        "local": 79.0,
-        "usd": 1.236,
-        "date": "2026-10-05",
+        "local": 78.0,
+        "usd": 1.201,
+        "date": "2026-10-12",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": true
+        "stale": false
       }
     }
   },
