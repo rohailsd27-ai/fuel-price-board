@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-01 00:45 UTC",
+  "updated_utc": "2026-11-01 12:49 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
@@ -67,22 +67,22 @@
         "usd": 1.334,
         "date": "2026-10-26",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 78.0,
         "usd": 1.21,
         "date": "2026-10-26",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       }
     }
   },
   "rates": {
-    "PKR": 276.777696,
-    "INR": 95.073571,
-    "BDT": 124.138021,
-    "AFN": 64.951887
+    "PKR": 276.745272,
+    "INR": 95.050072,
+    "BDT": 124.132185,
+    "AFN": 65.021269
   },
-  "had_failures": false
+  "had_failures": true
 }
