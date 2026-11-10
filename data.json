@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 03:58 UTC",
+  "updated_utc": "2026-11-10 14:29 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
@@ -74,7 +74,7 @@
         "usd": 1.298,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       }
     }
   },
