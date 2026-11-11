@@ -1,21 +1,21 @@
 {
-  "updated_utc": "2026-11-10 14:29 UTC",
+  "updated_utc": "2026-11-11 01:44 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
       "flag": "\ud83c\uddf5\ud83c\uddf0",
       "currency": "PKR",
       "petrol": {
-        "local": 346.0,
+        "local": 338.0,
         "usd": null,
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       },
       "diesel": {
-        "local": 378.0,
+        "local": 371.0,
         "usd": null,
-        "date": "2026-11-10",
+        "date": "2026-11-11",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       }
@@ -29,14 +29,14 @@
         "usd": 1.147,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 98.1,
         "usd": 1.035,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/India/",
-        "stale": false
+        "stale": true
       }
     },
     "Bangladesh": {
@@ -48,14 +48,14 @@
         "usd": 1.326,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 135.0,
         "usd": 1.085,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
-        "stale": false
+        "stale": true
       }
     },
     "Afghanistan": {
@@ -67,7 +67,7 @@
         "usd": 1.361,
         "date": "2026-11-02",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
-        "stale": false
+        "stale": true
       },
       "diesel": {
         "local": 83.0,
@@ -79,10 +79,10 @@
     }
   },
   "rates": {
-    "PKR": 276.541346,
-    "INR": 93.929192,
-    "BDT": 124.258644,
-    "AFN": 65.129119
+    "PKR": 276.951691,
+    "INR": 93.955805,
+    "BDT": 124.610683,
+    "AFN": 65.112265
   },
   "had_failures": false
 }
