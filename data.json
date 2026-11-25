@@ -1,21 +1,21 @@
 {
-  "updated_utc": "2026-11-24 17:06 UTC",
+  "updated_utc": "2026-11-25 04:49 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
       "flag": "\ud83c\uddf5\ud83c\uddf0",
       "currency": "PKR",
       "petrol": {
-        "local": 319.0,
+        "local": 318.0,
         "usd": null,
-        "date": "2026-11-24",
+        "date": "2026-11-25",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       },
       "diesel": {
-        "local": 357.0,
+        "local": 353.0,
         "usd": null,
-        "date": "2026-11-24",
+        "date": "2026-11-25",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       }
@@ -26,15 +26,15 @@
       "currency": "INR",
       "petrol": {
         "local": 108.65,
-        "usd": 1.163,
-        "date": "2026-11-16",
+        "usd": 1.171,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/India/",
         "stale": false
       },
       "diesel": {
         "local": 98.1,
-        "usd": 1.05,
-        "date": "2026-11-16",
+        "usd": 1.058,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/India/",
         "stale": false
       }
@@ -45,15 +45,15 @@
       "currency": "BDT",
       "petrol": {
         "local": 165.0,
-        "usd": 1.322,
-        "date": "2026-11-16",
+        "usd": 1.324,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
         "stale": false
       },
       "diesel": {
         "local": 135.0,
-        "usd": 1.082,
-        "date": "2026-11-16",
+        "usd": 1.084,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/Bangladesh/",
         "stale": false
       }
@@ -63,26 +63,26 @@
       "flag": "\ud83c\udde6\ud83c\uddeb",
       "currency": "AFN",
       "petrol": {
-        "local": 85.0,
-        "usd": 1.32,
-        "date": "2026-11-16",
+        "local": 78.0,
+        "usd": 1.2,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
         "stale": false
       },
       "diesel": {
-        "local": 83.0,
-        "usd": 1.289,
-        "date": "2026-11-16",
+        "local": 86.0,
+        "usd": 1.323,
+        "date": "2026-11-23",
         "source": "https://www.globalpetrolprices.com/Afghanistan/",
         "stale": false
       }
     }
   },
   "rates": {
-    "PKR": 276.548085,
-    "INR": 92.995018,
-    "BDT": 124.461097,
-    "AFN": 65.5486
+    "PKR": 276.39191,
+    "INR": 92.925233,
+    "BDT": 124.682087,
+    "AFN": 65.884112
   },
   "had_failures": false
 }
