@@ -1,21 +1,21 @@
 {
-  "updated_utc": "2026-11-25 16:54 UTC",
+  "updated_utc": "2026-11-26 03:58 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
       "flag": "\ud83c\uddf5\ud83c\uddf0",
       "currency": "PKR",
       "petrol": {
-        "local": 318.0,
+        "local": 314.0,
         "usd": null,
-        "date": "2026-11-25",
+        "date": "2026-11-26",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       },
       "diesel": {
-        "local": 353.0,
+        "local": 348.0,
         "usd": null,
-        "date": "2026-11-25",
+        "date": "2026-11-26",
         "source": "https://www.pakwheels.com/petroleum-prices-in-pakistan",
         "stale": false
       }
