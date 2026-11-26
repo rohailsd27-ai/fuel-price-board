@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26 03:58 UTC",
+  "updated_utc": "2026-11-26 16:32 UTC",
   "countries": {
     "Pakistan": {
       "name": "Pakistan",
@@ -79,10 +79,10 @@
     }
   },
   "rates": {
-    "PKR": 276.39191,
-    "INR": 92.925233,
-    "BDT": 124.682087,
-    "AFN": 65.884112
+    "PKR": 276.271679,
+    "INR": 92.345212,
+    "BDT": 125.182224,
+    "AFN": 66.198739
   },
   "had_failures": false
 }
